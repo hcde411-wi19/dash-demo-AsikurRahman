@@ -7,6 +7,14 @@ import dash_html_components as html
 weekday_in_order = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 counts_in_order = [160613, 154225, 155175, 150819, 146014, 215725, 203483]
 # TODO: working on this file to add more codes...
+# keep x, change y, change name
+
+# code below is the list of data we are asked to produce a visual for
+
+ped_s = [28686, 27520, 27224, 25846, 24900, 37808, 34792]
+ped_n = [26884, 26444, 25876, 24368, 23403, 36894, 32792]
+bike_s = [52642, 50812, 51866, 50913, 49740, 71586, 68147]
+bike_n = [52401, 49449, 50209, 49692, 47971, 69437, 67752]
 
 # initialize Dash environment
 app = dash.Dash(__name__)
@@ -28,7 +36,20 @@ app.layout = html.Div(children=[
             # configure the data
             'data': [
                 # set x to be weekday, and y to be the counts. We use bars to represent our data.
+
+                # here I changed the data of the y var and the name var to match the pedestrian
+                # data above
                 {'x': weekday_in_order, 'y': counts_in_order, 'type': 'bar', 'name': 'Total'},
+
+                # here u are changing the code to work with the new data you inputted on the
+                # top under "TO-DO"
+                {'x': weekday_in_order, 'y': ped_s, 'type': 'bar', 'name': 'Ped_S'},
+
+                {'x': weekday_in_order, 'y': ped_n, 'type': 'bar', 'name': 'Ped_N'},
+
+                {'x': weekday_in_order, 'y': bike_s, 'type': 'bar', 'name': 'Bike_S'},
+
+                {'x': weekday_in_order, 'y': bike_n, 'type': 'bar', 'name': 'Bike_N'},
 
             ],
             # configure the layout of the visualization --
